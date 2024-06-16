@@ -1,23 +1,37 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Header from './Components/Header.js';
+import Calculator from './Components/Calculator.js';
+import CalculationLog from './Components/CalculationLog.js';
+
 
 function App() {
+  const [localInvestingData, setLocalInvestingData] = useState({
+    initialAmount: 10000,
+    annualAmount: 1200,
+    duration: 10,
+    expected: 6
+  });
+
+  function handleChange(inputIdentifier, newValue) {
+    setLocalInvestingData((prevState) => {
+      return {
+        ...prevState,
+        [inputIdentifier]: parseInt(newValue)
+      };
+    });
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Calculator investingData={localInvestingData} onDataChange={handleChange} />
+      <CalculationLog 
+        iA={localInvestingData.initialAmount} 
+        aA={localInvestingData.annualAmount} 
+        eR={localInvestingData.expected} 
+        d={localInvestingData.duration} 
+      />
     </div>
   );
 }
