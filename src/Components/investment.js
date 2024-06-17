@@ -1,23 +1,47 @@
 export function calculateInvestmentResults({
   initialInvestment,
-  annualInvestment,
+  periodInvestment,
   expectedReturn,
   duration,
+  sip
 }) {
-  const annualData = [];
-  let investmentValue = initialInvestment;
+  const periodData = [];
+  let investmentValue;
+  if(initialInvestment===undefined || initialInvestment===null || isNaN(initialInvestment))
+    investmentValue = 0;
+  else
+    investmentValue = initialInvestment;
   for (let i = 0; i < duration; i++) {
-    const interestEarnedInYear = investmentValue * (expectedReturn / 100);
-    investmentValue += interestEarnedInYear + annualInvestment;
-    annualData.push({
-      year: i + 1,
-      interest: interestEarnedInYear,
-      valueEndOfYear: investmentValue,
-      annualInvestment: annualInvestment,
-    });
+    if (sip === 'Yearly') {
+      const interestEarnedInYear = investmentValue * (expectedReturn / 100);
+      investmentValue += interestEarnedInYear + periodInvestment;
+      periodData.push({
+        year: i + 1,
+        interest: interestEarnedInYear,
+        valueEndOfYear: investmentValue,
+        periodInvestment: periodInvestment,
+      });
+    } 
+    else 
+    { 
+      let yearlyInterestEarned = 0;
+      const monthlyRate = expectedReturn / 12 / 100;
+      for (let j = 0; j < 12; j++) {
+        investmentValue += periodInvestment;
+        const interestEarnedInMonth = investmentValue * monthlyRate;
+        yearlyInterestEarned += interestEarnedInMonth;
+        investmentValue += interestEarnedInMonth;
+      }
+      periodData.push({
+        year: i + 1,
+        interest: yearlyInterestEarned,
+        valueEndOfYear: investmentValue,
+        periodInvestment: periodInvestment,
+      });
+    }
   }
 
-  return annualData;
+  return periodData;
 }
 
 export const formatter = new Intl.NumberFormat('en-IN', {

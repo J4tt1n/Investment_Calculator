@@ -2,20 +2,21 @@ import React from 'react'
 import '../App.css'
 import { calculateInvestmentResults, formatter } from './investment.js';
 
-function CalculationLog({iA, aA, eR, d}) {
+function CalculationLog({iA, aA, eR, d, sip}) {
 
     const results = calculateInvestmentResults({
         initialInvestment: iA,
-        annualInvestment: aA,
+        periodInvestment: aA,
         expectedReturn: eR,
         duration: d,
+        sip: sip
     });
 
     let initialInvestment;
     if(Object.keys(results).length===0)
         initialInvestment = 0;
     else
-        initialInvestment = results[0].valueEndOfYear - results[0].interest - results[0].annualInvestment; 
+        initialInvestment = results[0].valueEndOfYear - results[0].interest - results[0].periodInvestment; 
 
 
     return (
@@ -33,7 +34,7 @@ function CalculationLog({iA, aA, eR, d}) {
                 <tbody>
                     {results.map((eachYear => 
                         {
-                            const totalInterest = eachYear.valueEndOfYear - eachYear.annualInvestment * eachYear.year - initialInvestment;
+                            const totalInterest = eachYear.valueEndOfYear - eachYear.periodInvestment * eachYear.year - initialInvestment;
                             const totalAmountInvested = eachYear.valueEndOfYear - totalInterest;
                             return (
                                 <tr>

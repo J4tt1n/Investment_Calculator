@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 
-function Calculator({ investingData, onDataChange }) {
+function Calculator({ investingData, onDataChange, investmentType }) {
 
     return (
         <div id='user-input'>
@@ -10,8 +10,8 @@ function Calculator({ investingData, onDataChange }) {
                 <input type='number' required value={investingData.initialAmount} onChange={(event) => onDataChange('initialAmount', event.target.value)} />
             </div>
             <div className='input-group'>
-                <label>Annual Investment</label>
-                <input type='number' required value={investingData.annualAmount} onChange={(event) => onDataChange('annualAmount', event.target.value)} />
+                <label>{investmentType} Investment</label>
+                <input type='number' required value={investingData.periodAmount} onChange={(event) => onDataChange('periodAmount', event.target.value)} />
             </div>
             <div className='input-group'>
                 <label>Expected Return (%)</label>
