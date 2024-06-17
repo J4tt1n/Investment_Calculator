@@ -119,3 +119,23 @@ th {
 .center {
   text-align: center;
 }
+
+@media screen and (max-width: 600px) {
+  table {
+    padding: 0 2rem ;
+  }
+
+  #user-input {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto;
+    margin: 2rem;
+  }
+
+  #result tr :nth-child(2), #result tr :nth-child(3) {
+    display: none;
+  }
+
+  tr :not(:first-child) {
+    transform: translateX(-1rem);
+  }
+}
