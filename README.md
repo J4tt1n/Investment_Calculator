@@ -1,70 +1,123 @@
-# Getting Started with Create React App
+# Investment Calculator App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Investment Calculator App! This application helps you calculate the future value of your investments, whether you are investing on a monthly or yearly basis. Simply input your initial investment, annual investment, investment duration, and expected rate of return to see the projected profit at the end of the investment period.
 
-## Available Scripts
+💰[Check out the Investment Calculator App here!](https://investing-calc-jj.vercel.app/)💰
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+1. [Features](#features)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Input Fields](#input-fields)
+5. [Example](#example)
+6. [Contributing](#contributing)
+7. [Contact](#contact)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Flexible Investment Types:** Choose between monthly and yearly investment options.
+- **User-Friendly Interface:** Easy-to-use input fields for entering investment details.
+- **Accurate Calculations:** Computes the future value of investments based on compound interest.
+- **Detailed Results:** Displays total profit and final amount at the end of the investment period.
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To get started with the Investment Calculator App, follow these steps:
 
-### `npm run build`
+1. Clone the repository to your local machine:
+    ```bash
+    git clone https://github.com/J4tt1n/investment-calculator.git
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Navigate to the project directory:
+    ```bash
+    cd investment-calculator
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Install the necessary dependencies:
+    ```bash
+    npm install
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Start the application:
+    ```bash
+    npm start
+    ```
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Open the app in your web browser.
+2. Select the investment type (monthly or yearly).
+3. Enter the required inputs:
+   - Initial Investment
+   - Annual Investment
+   - Duration (in years)
+   - Expected Rate of Return (%)
+4. Click the "Calculate" button to see the results.
+5. The app will display the total profit and the final amount at the end of the investment period.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Input Fields
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Initial Investment
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The amount of money you are starting with. This is a one-time investment made at the beginning.
 
-## Learn More
+### Annual Investment
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The amount of money you will invest each year. If you choose monthly investment, this amount will be divided by 12.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Duration
 
-### Code Splitting
+The length of time (in years) you plan to keep the investment. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### % Return
 
-### Analyzing the Bundle Size
+The expected annual rate of return on your investment. This should be entered as a percentage.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Example
 
-### Making a Progressive Web App
+Let's say you have the following inputs:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Initial Investment: $10,000
+- Annual Investment: $1,200
+- Duration: 10 years
+- Expected Return: 6%
 
-### Advanced Configuration
+If you select the monthly investment option, the app will calculate the monthly investment amount and use compound interest to compute the future value of your investment.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+After 10 years, the app will display:
+- **Invested Capital:** $22,000
+- **Total Profit:** $11,725
+- **Investment Value:** $33,725
 
-### Deployment
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+We welcome contributions from the community! If you'd like to contribute, please follow these steps:
 
-### `npm run build` fails to minify
+1. Fork the repository.
+2. Create a new branch with a descriptive name:
+    ```bash
+    git checkout -b feature-description
+    ```
+3. Make your changes.
+4. Commit your changes:
+    ```bash
+    git commit -m "Description of changes"
+    ```
+5. Push your changes to your fork:
+    ```bash
+    git push origin feature-description
+    ```
+6. Open a pull request on the main repository.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contact
+
+If you have any questions or feedback, feel free to reach out to us:
+
+- Email: jattinjaggi@gmail.com
+- GitHub: [J4tt1n]([https://github.com/J4tt1n/)
+
+---
+
+Thank you for using the Investment Calculator App! We hope it helps you make informed investment decisions.
