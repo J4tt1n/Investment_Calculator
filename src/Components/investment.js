@@ -36,7 +36,7 @@ export function calculateInvestmentResults({
         year: i + 1,
         interest: yearlyInterestEarned,
         valueEndOfYear: investmentValue,
-        periodInvestment: periodInvestment,
+        periodInvestment: (periodInvestment*12),
       });
     }
   }
